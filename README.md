@@ -41,18 +41,26 @@ skills/
 
 ### Claude Code (terminal or VS Code extension)
 
-**Personal** – available in all your projects:
+**Personal** – available in all your projects.
+
+macOS / Linux:
 ```bash
-git clone https://github.com/<your-account>/mvp-po-review-skill.git
+git clone https://github.com/danielnoto49-arch/mvp-po-review-skill.git
 mkdir -p ~/.claude/skills
 cp -r mvp-po-review-skill/skills/mvp-po-review ~/.claude/skills/
 ```
-On Windows, copy the folder to `%USERPROFILE%\.claude\skills\`.
 
-**Project** – only for one repository (commit it to share with your team):
+Windows (PowerShell):
+```powershell
+git clone https://github.com/danielnoto49-arch/mvp-po-review-skill.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse mvp-po-review-skill\skills\mvp-po-review "$env:USERPROFILE\.claude\skills\"
+```
+
+**Project** – only for one repository (commit it to share with your team). Run inside your project folder:
 ```bash
 mkdir -p .claude/skills
-cp -r mvp-po-review-skill/skills/mvp-po-review .claude/skills/
+cp -r path/to/mvp-po-review-skill/skills/mvp-po-review .claude/skills/
 ```
 
 ### Claude apps (claude.ai, desktop)
